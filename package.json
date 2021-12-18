@@ -1,0 +1,31 @@
+{
+  "name": "api-usuarios",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ./src/index.js",
+    "start": "node ./src/index.js"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.95.6",
+    "nodemon": "^2.0.14",
+    "pg": "^8.6.0",
+    "swagger-autogen": "^2.12.6",
+    "swagger-ui-express": "^4.1.6",
+    "yup": "^0.32.11",
+    "yup-locales": "^1.2.0"
+  }
+}

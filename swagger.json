@@ -1,0 +1,232 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "REST API",
+    "description": ""
+  },
+  "host": "localhost:4000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "securityDefinitions": {
+    "bearerToken": {
+      "type": "apiKey",
+      "in": "header",
+      "name": "authorization",
+      "description": "Input Your Bearer Token"
+    }
+  },
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/users": {
+      "post": {
+        "tags": [],
+        "description": "Cadastrar Usuário - POST \n Todas as informações são obrigatórias conforme o modelo abaixo no exemplo.\n A SENHA DEVE TER NO MÍNIMO 6 CARACTERES",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example":  "admin"
+                },
+                "email": {
+                  "example":  "admin@admin.com"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example":  "11122233345"
+                },
+                "pis": {
+                  "type": "string",
+                  "example":  "99988877765"
+                },
+                "password": {
+                  "type": "string",
+                  "example":  "123456"
+                },
+                "adress": {
+                  "example": {
+                    "cep": "01001000",
+                    "rua": "Praça da Sé",
+                    "numero": "10",
+                    "complemento": "lado ímpar",
+                    "bairro": "Sé",
+                    "municipio": "São Paulo",
+                    "estado": "São Paulo",
+                    "pais": "Brazil"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [],
+        "description": "Login Usuário - POST \n Todas as informações são obrigatórias conforme o modelo abaixo no exemplo. \n O login podera ser feito através do email pis ou cpf. \n Após o login o token que é retornado deve ser enviado nas próximas requisições para que o usuário possa ter acesso aos recursos da API. Copie o token, clique no botão Authorize e cole o token em value.",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "identifier": {
+                  "type": "string",
+                  "example": "11122233345"
+                },
+                "password": {
+                  "type": "string",
+                  "example": "123456"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/profile": {
+      "get": {
+        "tags": [],
+        "description": "Obter Perfil do Usuário - GET \n O token deve ser enviado no cabeçalho da requisição.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "put": {
+        "tags": [],
+        "description": "Atualizar Perfil do Usuário - PUT \n O token deve ser enviado no cabeçalho da requisição.\n Todas as informações com excessão da senha são obrigatórias conforme o modelo abaixo no exemplo.\n Caso não queira alterar a senha, deixe o campo senha em branco.\n CASO A SENHA SEJA ALTERADA, DEVE TER NO MÍNIMO 6 CARACTERES",
+        "parameters": [
+          {
+            "name": "obj",
+            "in": "body",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "example":  "admin"
+                },
+                "email": {
+                  "example":  "admin@admin.com"
+                },
+                "cpf": {
+                  "type": "string",
+                  "example":  "11122233345"
+                },
+                "pis": {
+                  "type": "string",
+                  "example":  "99988877765"
+                },
+                "password": {
+                  "type": "string",
+                  "example":  ""
+                },
+                "adress": {
+                  "example": {
+                    "cep": "01001000",
+                    "rua": "Praça da Sé",
+                    "numero": "10",
+                    "complemento": "lado ímpar",
+                    "bairro": "Sé",
+                    "municipio": "São Paulo",
+                    "estado": "São Paulo",
+                    "pais": "Brazil"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      },
+      "delete": {
+        "tags": [],
+        "description": "Deletar Perfil do Usuário - DELETE \n O token deve ser enviado no cabeçalho da requisição.",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        },
+        "security": [
+          {
+            "bearerToken": []
+          }
+        ]
+      }
+    }
+  },
+  "definitions": {}
+}

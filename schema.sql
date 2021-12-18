@@ -1,0 +1,27 @@
+DROP TABLE IF EXISTS adresses;
+DROP TABLE IF EXISTS users;
+
+
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(190) NOT NULL,
+  email VARCHAR(190) NOT NULL,
+  cpf VARCHAR(11) NOT NULL,
+  pis VARCHAR(11) NOT NULL,
+  password VARCHAR(190) NOT NULL
+);
+
+
+CREATE TABLE adresses (
+  adress_id SERIAL,
+  user_id INTEGER NOT NULL,
+  cep VARCHAR(8) NOT NULL,
+  rua VARCHAR(190) NOT NULL,
+  numero VARCHAR(10) NOT NULL,
+  complemento VARCHAR(190),
+  bairro VARCHAR(190),
+  municipio VARCHAR(190) NOT NULL,
+  estado VARCHAR(190) NOT NULL,
+  pais VARCHAR(190) NOT NULL,
+  FOREIGN KEY (user_Id) REFERENCES users(id)
+);
