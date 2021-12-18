@@ -1,5 +1,5 @@
 {
-  "name": "api-usuarios",
+  "name": "back-end-crud-pontotel",
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
@@ -7,13 +7,16 @@
     "start": "node ./src/index.js"
   },
   "repository": {
-    "type": "git"
+    "type": "git",
+    "url": "git+https://github.com/lucasfpds/back-end-crud-pontotel.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Lucas Fernandes",
   "license": "ISC",
   "bugs": {
+    "url": "https://github.com/lucasfpds/back-end-crud-pontotel/issues"
   },
+  "homepage": "https://github.com/lucasfpds/back-end-crud-pontotel#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
