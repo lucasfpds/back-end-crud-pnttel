@@ -15,7 +15,7 @@ Fora do servidor Node, a aplicação vem com Swagger; uma [documentação aberta
 
 <h2>📷 Preview</h2>
 
-<img src="./.gif">
+<img src="back-end-crud-pontotel.gif">
 
 ## Pré-requisitos
 
