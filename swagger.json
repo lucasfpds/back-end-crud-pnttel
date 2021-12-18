@@ -5,11 +5,11 @@
     "title": "REST API",
     "description": ""
   },
-  "host": "localhost:4000",
+  "host": "back-end-crud-pontotel.herokuapp.com",
   "basePath": "/",
   "tags": [],
   "schemes": [
-    "http"
+    "https"
   ],
   "securityDefinitions": {
     "bearerToken": {
